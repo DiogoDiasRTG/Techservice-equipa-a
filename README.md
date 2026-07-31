@@ -40,7 +40,6 @@ CREATE TABLE tecnicos (
 ## Responsabilidades
 
 - **CRUD de Técnicos** - criação, leitura, atualização e remoção (lógica) de registos de técnicos.
-- **Atribuição de Técnicos às Ordens de Serviço** - através da chave estrangeira `id_tecnico` na tabela `ordens_servico`.
 
 ## Equipa desenvolvedora
 
@@ -50,7 +49,3 @@ CREATE TABLE tecnicos (
 - João Martins
 - Maria Ribeiro
 - Miguel Neves
-
-## 📄 Licença
-
-Este projeto está sob a licença que a organização definir para o repositório principal.
