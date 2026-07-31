@@ -22,7 +22,7 @@ if __name__ == "__main__":
     try:
         conexao = conectar()
         if conexao.is_connected():
-            db_info = conexao.get_server_info()
+            db_info = conexao.server_info
             print(f"Sucesso! Conectado ao servidor MySQL versão: {db_info}")
             
             cursor = conexao.cursor()
