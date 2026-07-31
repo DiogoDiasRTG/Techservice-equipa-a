@@ -33,6 +33,10 @@ CREATE TABLE tecnicos (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
+## Tabelas criadas
+
+<img width="1842" height="1652" alt="image" src="https://github.com/user-attachments/assets/dcdce4a6-3332-4528-9d5c-faf49369b256" />
+
 ## Responsabilidades
 
 - **CRUD de Técnicos** - criação, leitura, atualização e remoção (lógica) de registos de técnicos.
