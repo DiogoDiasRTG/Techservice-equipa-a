@@ -1,3 +1,6 @@
+from src.models import tecnico
+from src.models.tecnico import Tecnico
+from src.repositories.tecnico_repository import inserir
 
 
 
@@ -20,6 +23,16 @@ while True:
 
 
     if opcao == "3":
-            
-          
-        
+
+
+
+    if opcao == "4":
+
+
+    if opcao == "0":
+        print("Saindo do programa...")
+        break
+
+    else:
+        print("Opção inválida. Por favor, escolha uma opção válida.")          
+\
