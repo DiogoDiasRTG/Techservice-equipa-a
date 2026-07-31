@@ -1,4 +1,4 @@
-from src.database.conexao import conectar
+from database.conexao import conectar
 from src.models.tecnico import Tecnico
 
 
