@@ -36,9 +36,9 @@ while True:
             print("Nenhum técnico encontrado.")
       
 
-    if opcao == "3":
+    elif opcao == "3":
 
-        id_tecnico = input("Digite o ID do técnico que deseja editar: ")
+        id_tecnico = int(input("Digite o ID do técnico que deseja editar: "))
         nome = input("Digite o novo nome do técnico: ")
         email = input("Digite o novo email do técnico: ")
         telefone = input("Digite o novo telefone do técnico: ")
@@ -48,11 +48,10 @@ while True:
         atualizar(tecnico)
         print(f"Técnico com ID {id_tecnico} atualizado com sucesso.")
 
-    if opcao == "4":
+    elif opcao == "4":
 
-        id_tecnico = input("Digite o ID do técnico que deseja remover: ")
-        tecnico=Tecnico(id_tecnico=id_tecnico)
-        remover(tecnico)
+        id_tecnico = int(input("Digite o ID do técnico que deseja remover: "))
+        remover(id_tecnico)
         print(f"Técnico com ID {id_tecnico} removido com sucesso.")
 
 
@@ -60,7 +59,7 @@ while True:
         
 
 
-    if opcao == "0":
+    elif opcao == "0":
         print("Sair do programa...")
         break
 
