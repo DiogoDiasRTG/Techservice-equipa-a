@@ -38,38 +38,29 @@ while True:
 
     if opcao == "3":
 
-      id_tecnico = int(input("Digite o ID do técnico a ser atualizado: "))
-      tecnico = procurar_por_id(id_tecnico)
-      if tecnico:
-          print(f"Técnico encontrado: {tecnico['nome']}")
-          nome = input("Digite o novo nome do técnico: ")
-          telefone = input("Digite o novo telefone do técnico: ")
-          email = input("Digite o novo email do técnico: ")
-          especialidade = input("Digite a nova especialidade do técnico: ")
+        id_tecnico = input("Digite o ID do técnico que deseja editar: ")
+        nome = input("Digite o novo nome do técnico: ")
+        email = input("Digite o novo email do técnico: ")
+        telefone = input("Digite o novo telefone do técnico: ")
+        especialidade = input("Digite a nova especialidade do técnico: ")
 
-          tecnico_atualizado = Tecnico(nome=nome, telefone=telefone, email=email, especialidade=especialidade)
-          tecnico_atualizado.id_tecnico = id_tecnico
-          atualizar(tecnico_atualizado)
-          print(f"Técnico {tecnico_atualizado.nome} atualizado com sucesso!")
-      else:
-          print("Técnico não encontrado.")
+        tecnico = Tecnico(nome=nome, email=email, telefone=telefone, especialidade=especialidade, id_tecnico=id_tecnico)
+        atualizar(tecnico)
+        print(f"Técnico com ID {id_tecnico} atualizado com sucesso.")
 
     if opcao == "4":
 
-        id_tecnico = int(input("Digite o ID do técnico a ser removido: "))
-        tecnico = procurar_por_id(id_tecnico)
-        if tecnico:
-            remover(id_tecnico)
-            print(f"Técnico {tecnico['nome']} removido com sucesso!")
-        else:
-            print("Técnico não encontrado.")
+        id_tecnico = input("Digite o ID do técnico que deseja remover: ")
+        tecnico=Tecnico(id_tecnico=id_tecnico)
+        remover(tecnico)
+        print(f"Técnico com ID {id_tecnico} removido com sucesso.")
 
 
 
         
 
 
-      if opcao == "0":
+    if opcao == "0":
         print("Sair do programa...")
         break
 
