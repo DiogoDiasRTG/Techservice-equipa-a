@@ -30,7 +30,7 @@ while True:
 
 
     if opcao == "0":
-        print("Saindo do programa...")
+        print("Sair do programa...")
         break
 
     else:
