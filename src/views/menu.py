@@ -1,4 +1,5 @@
 from src.models.tecnico import Tecnico
+from src.models import tecnico
 from src.repositories.tecnico_repository import inserir, listar, procurar_por_id, atualizar, remover, linha_para_tecnico
 
 def main():
@@ -15,27 +16,25 @@ while True:
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":
-
+      
+      
       nome = input("Digite o nome do técnico: ")
+      especialidade = input("Digite a especialidade do técnico: ")
       telefone = input("Digite o telefone do técnico: ")
       email = input("Digite o email do técnico: ")
-      especialidade = input("Digite a especialidade do técnico: ")
-
-      tecnico = inserir(tecnico(nome=nome, telefone=telefone, email=email, especialidade=especialidade))
-
+      tecnico = inserir(Tecnico(nome=nome, especialidade=especialidade, telefone=telefone, email=email))
       print(f"Técnico {tecnico.nome} inserido com sucesso!")
-      
 
-    if opcao == "2":
+    elif opcao == "2":
 
-     tecnico= listar()
-     if tecnico:
-        
-        print("Lista de técnicos:")
-        for tecnico in tecnico:
-            print(f"ID: {tecnico.id_tecnico}, Nome: {tecnico.nome}, Telefone: {tecnico.telefone}, Email: {tecnico.email}, Especialidade: {tecnico.especialidade}")
+        tecnicos = listar()
+        if tecnicos:
+            print("\n=== Lista de Técnicos ===")
+            for tecnico in tecnicos:
+                print(f"ID: {tecnico['id_tecnico']}, Nome: {tecnico['nome']}, Email: {tecnico['email']}, Telefone: {tecnico['telefone']}, Especialidade: {tecnico['especialidade']}")
         else:
-            print("Nenhum técnico encontrado.")    
+            print("Nenhum técnico encontrado.")
+      
 
     if opcao == "3":
 
@@ -60,13 +59,17 @@ while True:
         id_tecnico = int(input("Digite o ID do técnico a ser removido: "))
         tecnico = procurar_por_id(id_tecnico)
         if tecnico:
-            remover(tecnico)
+            remover(id_tecnico)
             print(f"Técnico {tecnico['nome']} removido com sucesso!")
         else:
             print("Técnico não encontrado.")
 
 
-    if opcao == "0":
+
+        
+
+
+      if opcao == "0":
         print("Sair do programa...")
         break
 
