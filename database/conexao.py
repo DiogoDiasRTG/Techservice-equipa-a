@@ -15,3 +15,23 @@ def conectar():
         password=os.getenv("DB_PASSWORD", "TechService@2026!"),
         database=os.getenv("DB_NAME", "techservice_equipa1")
     )
+
+
+# --- Teste de conexão logo abaixo ---
+if __name__ == "__main__":
+    try:
+        conexao = conectar()
+        if conexao.is_connected():
+            db_info = conexao.get_server_info()
+            print(f"Sucesso! Conectado ao servidor MySQL versão: {db_info}")
+            
+            cursor = conexao.cursor()
+            cursor.execute("SELECT DATABASE();")
+            nome_bd = cursor.fetchone()
+            print(f"Banco de dados atual: {nome_bd[0]}")
+            
+            cursor.close()
+            conexao.close()
+            print("Conexão fechada com sucesso.")
+    except Exception as e:
+        print(f"Erro ao conectar ao banco de dados: {e}")
