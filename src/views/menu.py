@@ -1,14 +1,15 @@
-from src.models import tecnico
 from src.models.tecnico import Tecnico
-from src.repositories.tecnico_repository import inserir
+from src.repositories.tecnico_repository import inserir, listar, procurar_por_id, atualizar, remover, linha_para_tecnico
 
+def main():
+    print("Técnicos - Sistema de Gestão de Assistência Técnica")
 
 
 while True:
     print("1. Inserir técnicos")
     print("2. Listar técnicos")
-    print("3. Gerir técnicos")
-    print("4. Apagar técnicos")
+    print("3. Atualizar técnicos")
+    print("4. Remover técnicos")
     print("0. Sair")
 
     opcao = input("Escolha uma opção: ")
@@ -27,7 +28,7 @@ while True:
 
     if opcao == "2":
 
-     tecnico=listar()
+     tecnico= listar()
      if tecnico:
         
         print("Lista de técnicos:")
@@ -38,9 +39,31 @@ while True:
 
     if opcao == "3":
 
-     
+      id_tecnico = int(input("Digite o ID do técnico a ser atualizado: "))
+      tecnico = procurar_por_id(id_tecnico)
+      if tecnico:
+          print(f"Técnico encontrado: {tecnico['nome']}")
+          nome = input("Digite o novo nome do técnico: ")
+          telefone = input("Digite o novo telefone do técnico: ")
+          email = input("Digite o novo email do técnico: ")
+          especialidade = input("Digite a nova especialidade do técnico: ")
+
+          tecnico_atualizado = Tecnico(nome=nome, telefone=telefone, email=email, especialidade=especialidade)
+          tecnico_atualizado.id_tecnico = id_tecnico
+          atualizar(tecnico_atualizado)
+          print(f"Técnico {tecnico_atualizado.nome} atualizado com sucesso!")
+      else:
+          print("Técnico não encontrado.")
 
     if opcao == "4":
+
+        id_tecnico = int(input("Digite o ID do técnico a ser removido: "))
+        tecnico = procurar_por_id(id_tecnico)
+        if tecnico:
+            remover(tecnico)
+            print(f"Técnico {tecnico['nome']} removido com sucesso!")
+        else:
+            print("Técnico não encontrado.")
 
 
     if opcao == "0":
@@ -49,4 +72,4 @@ while True:
 
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")          
-\
+
