@@ -16,7 +16,7 @@ Este repositório contém a implementação da entidade **Técnicos**, responsá
 | `email` | VARCHAR(150) | Email |
 | `especialidade` | VARCHAR(100) | Área de especialidade |
 | `ativo` | TINYINT(1) | Ativo (1) ou Inativo (0) |
-| `criado_em` | DATETIME | Data do cadastro |
+| `criado_em` | DATETIME | Data do registo |
 
 ### Script SQL de criação
 
