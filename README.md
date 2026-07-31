@@ -42,10 +42,6 @@ CREATE TABLE tecnicos (
 - **CRUD de Técnicos** - criação, leitura, atualização e remoção (lógica) de registos de técnicos.
 - **Atribuição de Técnicos às Ordens de Serviço** - através da chave estrangeira `id_tecnico` na tabela `ordens_servico`.
 
-## Relacionamentos
-
-A tabela `tecnicos` relaciona-se com a tabela `ordens_servico` através de uma chave estrangeira (FK), permitindo associar cada ordem de serviço a um técnico responsável.
-
 ## Equipa desenvolvedora
 
 **Equipa A - Técnicos**
