@@ -17,7 +17,7 @@ def conectar():
     )
 
 
-# --- Teste de conexão logo abaixo ---
+
 if __name__ == "__main__":
     try:
         conexao = conectar()
